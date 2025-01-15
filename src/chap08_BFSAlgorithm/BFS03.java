@@ -25,7 +25,7 @@ public class BFS03 {
             }
         }
     }
-    // 최단경로 문제의 암기 로직
+    // 최단경로 문제의 암기 로직 (해당 경로에 갈 수 있는지 체크 로직)
     public boolean isValid(int x, int y) {
         return x >= 0 && y >= 0 && x < board.length && y < board[0].length && !visited[x][y] && board[x][y] == 2;
     }
