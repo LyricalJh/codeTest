@@ -1,5 +1,14 @@
 package chap08_BFSAlgorithm;
-
+/**
+ * 작성자: [소중한]
+ * 작성일: [2025-01-16]
+ * 문제 유형: [BFS]
+ * 문제 이름: [백준: 안전영역]
+ * url : https://www.acmicpc.net/problem/2468
+ * 문제 후기
+ * 특정 조건들을 잘 이해를 못해서 원하는 정답이 나오지 않음
+ * BFS 틀 잘 잡고 특정 조건에 맞게 구현의 능력을 키워야함.
+ */
 import java.util.*;
 
 public class BFS13 {
@@ -48,8 +57,6 @@ public class BFS13 {
                     }
                 }
             }
-
-            // 최대 안전 영역 개수 갱신
             answer = Math.max(answer, safeAreaCount);
         }
     }
