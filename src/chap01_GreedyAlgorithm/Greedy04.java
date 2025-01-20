@@ -6,6 +6,8 @@ import java.util.*;
  * 문제 유형: [Union Find]
  * O표기법: [O(m * a(n))]
  * 문제 이름: [인프런: Union Find]
+ * 문제 후기 가장 기본적인 유니온 파인드 알고리즘
+ * 해당 알고리즘 활용하여 다양한 알고리즘 파생, (프림 알고리즘, 크루스칼 알고리즘)
  */
 public class Greedy04 {
 
