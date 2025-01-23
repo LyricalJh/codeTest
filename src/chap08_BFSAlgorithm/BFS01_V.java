@@ -18,7 +18,7 @@ class Position {
         this.y = y;
     }
 }
-public class BFS01 {
+public class BFS01_V {
 
     public int BFS(String[][] map, Position start, Position target, int rows, int cols) {
         Queue<Position> queue = new LinkedList<>();
@@ -44,8 +44,8 @@ public class BFS01 {
                     int ny = current.y + dy[j];
 
                     if (nx >= 0 && ny >= 0 && nx < rows && ny < cols && !visited[nx][ny] && !map[nx][ny].equals("X")) {
-                        queue.add(new Position(nx, ny));
                         visited[nx][ny] = true;
+                        queue.add(new Position(nx, ny));
                     }
                 }
             }
@@ -72,7 +72,7 @@ public class BFS01 {
             }
         }
 
-        BFS01 T = new BFS01();
+        BFS01_V T = new BFS01_V();
         int dis1 = T.BFS(map, start, lever, rows, cols);
         if (dis1 == -1) System.out.println(dis1);
 
