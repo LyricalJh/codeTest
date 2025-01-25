@@ -49,6 +49,7 @@ public class Impl04_V2 {
                 for (int next : graph.get(cur)) {
                     answer[next] = Math.max(answer[next], answer[cur] + time[next]);
                     indegree[next]--;
+                    // 진입차수가 0이 되면 큐에 담아준다.
                     if (indegree[next] == 0) queue.offer(next);
                 }
             }
