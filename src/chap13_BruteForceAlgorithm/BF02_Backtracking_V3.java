@@ -6,11 +6,12 @@ import java.util.Scanner;
 public class BF02_Backtracking_V3 {
     static int n,m;
     static int[] result;
+    static StringBuilder sb = new StringBuilder();
 
     public void DFS(int depth) {
         if (depth == m) {
-            for (int val : result) System.out.print(val + " ");
-            System.out.println();
+            for (int val : result) sb.append(val + " ");
+            sb.append("\n");
             return;
         }
 
@@ -28,5 +29,6 @@ public class BF02_Backtracking_V3 {
 
         result = new int[m];
         T.DFS(0);
+        System.out.println(sb.toString());
     }
 }
