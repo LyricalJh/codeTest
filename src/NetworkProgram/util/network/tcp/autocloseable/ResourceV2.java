@@ -1,10 +1,10 @@
 package NetworkProgram.util.network.tcp.autocloseable;
 
-public class ResourceV1 {
+public class ResourceV2 implements AutoCloseable {
 
     private String name;
 
-    public ResourceV1(String name) {
+    public ResourceV2(String name) {
         this.name = name;
     }
 
@@ -17,12 +17,9 @@ public class ResourceV1 {
         throw new CallException(name + " ex");
     }
 
+    @Override
     public void close() {
         System.out.println(name + " close");
-    }
-
-    public void closeEx() throws CallException {
-        System.out.println(name + " closeEx");
-        throw new CloseException(name + " closeEx");
+        throw new CloseException(name + " ex");
     }
 }
