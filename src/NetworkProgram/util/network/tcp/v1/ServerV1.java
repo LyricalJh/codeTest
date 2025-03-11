@@ -23,7 +23,7 @@ public class ServerV1 {
         DataOutputStream out = new DataOutputStream(socket.getOutputStream());
 
         // 클라이언트 문자 받기
-        String receiveMsg = in.readUTF();
+        String receiveMsg = in.readUTF(); //  블록킹 메서드
         log("client -> server : " + receiveMsg);
 
 

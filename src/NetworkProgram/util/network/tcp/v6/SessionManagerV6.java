@@ -1,25 +1,28 @@
 package NetworkProgram.util.network.tcp.v6;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class SessionManagerV6 {
 
-    private List<SessionV6> sessions = new ArrayList<>();
+    private final List<SessionV6> sessions = Collections.synchronizedList(new ArrayList<>());
 
-    public synchronized void add(SessionV6 session) {
+    public void add(SessionV6 session) {
         sessions.add(session);
     }
 
-    public synchronized void remove(SessionV6 session) {
+    public void remove(SessionV6 session) {
         sessions.remove(session);
     }
 
-    public synchronized void closeAll() {
-        for (SessionV6 session : sessions) {
-            session.close();
-        }
-        sessions.clear();
+    public void closeAll() {
+       synchronized (sessions) {
+           for (SessionV6 session : sessions) {
+               session.close();
+           }
+           sessions.clear();
+       }
     }
 }
